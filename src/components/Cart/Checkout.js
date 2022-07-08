@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./Checkout.module.css";
 
 const isEmpty = (value) => value.trim() === "";
 const isNotfiveChars = (value) => value.trim().length !== 5;
 
 const Checkout = (props) => {
+  const [formInputsValidity, setFormInputsValidity] = useState({});
+
   const nameInputRef = useRef();
   const streetInputRef = useRef();
   const postalCodeInputRef = useRef();
